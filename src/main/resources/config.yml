@@ -1,0 +1,6 @@
+Motd:
+  Enabled: true
+  Texts:
+    - "&bA minecraft server"
+    - "&4A minecraft server"
+    - "&1A minecraft server"
