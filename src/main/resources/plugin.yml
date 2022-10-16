@@ -1,4 +1,4 @@
-name: rndMOTD
+name: RandomMOTD
 version: 1.0-SNAPSHOT
 main: de.rehfeldinio.motd.MOTDChange
 authors: [Rehfeldinio]
