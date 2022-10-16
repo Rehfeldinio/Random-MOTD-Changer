@@ -1,7 +1,7 @@
 # Random MOTD Changer
 
 ---
-![Release](https://img.shields.io/github/v/release/rehfeldinio/Random-MOTD-Changer?label=Release)
+![Release](https://img.shields.io/github/v/release/rehfeldinio/Random-MOTD-Changer)
 
 ## Features
 Randomy changes the MOTD of the Server.
