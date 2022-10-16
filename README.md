@@ -3,12 +3,12 @@
 ![Release](https://img.shields.io/github/v/release/rehfeldinio/Random-MOTD-Changer)
 
 ## Features
-Randomy changes the MOTD of the Server.
+Randomly changes the MOTD of the Server.
 
 ## Enable the Plugin
 - Put the `RandomMOTD.jar` in your `plugins` folder
 - (Re)start your Server
-- Modyfy the `plugin/RandomMOTD/config.yml`
+- Modify the `plugin/RandomMOTD/config.yml`
 ## Config
 ```yml
 Motd:
