@@ -1,6 +1,6 @@
 # Random MOTD Changer
 
-[![Release](https://img.shields.io/badge/release-1.1-red)](https://github.com/Rehfeldinio/Random-MOTD-Changer/releases/tag/1.2)
+[![Release](https://img.shields.io/badge/release-1.2-red)](https://github.com/Rehfeldinio/Random-MOTD-Changer/releases/tag/1.2)
 
 A Paper plugin that randomly selects the server MOTD from a configurable list on each ping. Supports gradient colors, hex colors, and classic color codes.
 
