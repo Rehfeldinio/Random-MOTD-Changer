@@ -19,7 +19,21 @@ Reloads the configuration file without restarting the server.
 - `motdchange.reload`  
 - or server **OP**
 
+## Commands
+
+| Command | Description | Permission |
+|---------|-------------|------------|
+| `/motd-reload` | Reloads the config | `motdchange.reload` |
+
+## Permissions
+
+| Permission | Description | Default |
+|------------|-------------|---------|
+| `motdchange.reload` | Allows reloading the config | OP |
+
+
 ## Config
+
 ```yml
 Motd:
   Enabled: true
