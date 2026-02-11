@@ -1,23 +1,23 @@
 package de.rehfeldinio.motd;
 
-import org.bukkit.ChatColor;
+import net.kyori.adventure.text.Component;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.server.ServerListPingEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class MOTDChange extends JavaPlugin implements Listener {
 
-    Random random;
+    private final Random random = new Random();
 
     @Override
     public void onEnable() {
         LoadConfig();
-        if ((this.getConfig().getBoolean("Motd.Enabled")) && (!this.getConfig().getStringList("Motd.Texts").isEmpty())) {
+        if (this.getConfig().getBoolean("Motd.Enabled") && !this.getConfig().getStringList("Motd.Texts").isEmpty()) {
             this.getServer().getPluginManager().registerEvents(this, this);
         }
         getCommand("motd-reload").setExecutor(new ReloadCommand(this));
@@ -35,15 +35,12 @@ public class MOTDChange extends JavaPlugin implements Listener {
     }
 
     @EventHandler(priority = EventPriority.HIGH)
-    public void setMotd(ServerListPingEvent s) {
-        this.random = new Random();
-        ArrayList motd = (ArrayList) this.getConfig().getStringList("Motd.Texts");
-        int max = motd.size();
-        int text = random.nextInt(max);
-        s.setMotd(TranslateColor((String) motd.get(text)));
-    }
+    public void setMotd(ServerListPingEvent event) {
+        List<String> motds = this.getConfig().getStringList("Motd.Texts");
+        if (motds.isEmpty()) return;
 
-    public static String TranslateColor(String message) {
-        return ChatColor.translateAlternateColorCodes('&', message.replace("\\\\n", "\n").replace("\\n", "\n").replace("&nl", "\n"));
+        String selected = motds.get(random.nextInt(motds.size()));
+        Component motdComponent = GradientUtil.process(selected);
+        event.motd(motdComponent);
     }
 }

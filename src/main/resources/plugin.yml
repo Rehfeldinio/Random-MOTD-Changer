@@ -1,7 +1,7 @@
 name: RandomMOTD
-version: 1.0-SNAPSHOT
+version: 1.2
 main: de.rehfeldinio.motd.MOTDChange
-api-version: '1.13'
+api-version: '1.21'
 authors: [Rehfeldinio]
 
 commands:

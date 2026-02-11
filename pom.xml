@@ -6,13 +6,13 @@
 
     <groupId>Rehfi</groupId>
     <artifactId>MOTDChange</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.2</version>
     <packaging>jar</packaging>
 
     <name>MOTDChange</name>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>21</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -45,17 +45,22 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>2.3.1</version>
+                <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <outputDirectory>server/plugins</outputDirectory>
+                    <!-- add the annotation processor -->
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>com.velocitypowered</groupId>
+                            <artifactId>velocity-api</artifactId>
+                            <version>3.5.0-SNAPSHOT</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
         </plugins>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
-                <filtering>true</filtering>
             </resource>
         </resources>
     </build>
@@ -73,9 +78,21 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.destroystokyo.paper</groupId>
+            <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>1.12.2-R0.1-SNAPSHOT</version>
+            <version>1.21.11-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.kyori</groupId>
+            <artifactId>adventure-api</artifactId>
+            <version>4.14.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.kyori</groupId>
+            <artifactId>adventure-text-serializer-legacy</artifactId>
+            <version>4.14.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

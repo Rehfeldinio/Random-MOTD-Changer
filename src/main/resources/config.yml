@@ -4,3 +4,7 @@ Motd:
     - "&bA minecraft server"
     - "&4A minecraft server"
     - "&1A minecraft server"
+    - "<gradient:#FF0000:#00FF00>Willkommen auf dem Server!</gradient>"
+    - "<gradient:#FF0000:#FFFF00:#00FF00>Regenbogen Text</gradient>"
+    - "<hex:#FF5555>Roter Text</hex>"
+    - "&lFett &r<gradient:#00AAFF:#AA00FF>und Gradient!</gradient>"
