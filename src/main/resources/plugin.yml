@@ -1,4 +1,17 @@
 name: RandomMOTD
 version: 1.0-SNAPSHOT
 main: de.rehfeldinio.motd.MOTDChange
+api-version: '1.13'
 authors: [Rehfeldinio]
+
+commands:
+  motd-reload:
+    description: Reloads the MOTDChange configuration.
+    usage: /motd-reload
+    permission: motdchange.reload
+    permission-message: "&cDu hast keine Berechtigung diesen Command auszufuehren."
+
+permissions:
+  motdchange.reload:
+    description: Allows reloading the MOTDChange config.
+    default: op
